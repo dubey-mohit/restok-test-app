@@ -1,0 +1,71 @@
+<form name="userForm">
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label for="empid">Cust Id</label></div>
+        <div class="col-md-5">
+           <span><input type="text" class="form-control" name="custId" id="empid" ng-model="User.custId" required></span>
+            <span><p ng-show="userForm.custId.$invalid && !userForm.custId.$pristine" class="help-block"><i>Id
+                             is required</i></p></span>
+        </div>
+    </div>
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label for="first">First Name</label></div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" name="firstName" id="first" ng-model="User.first" required>
+            <span><p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block"><i>First name is
+                             is required</i></p></span>
+        </div>
+    </div>
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label for="last">Last Name</label></div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" name="lastName" id="last" ng-model="User.last" required>
+            <span><p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="help-block"><i>Last name is
+                             is required</i></p></span>
+        </div>
+    </div>
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label for="birth">Birth Date</label></div>
+        <div class="col-md-5">
+            <!--<input type="text" class="form-control" name="birthday" id="birth" ng-model="User.birth" required>-->
+            <datepicker date-format="dd/MM/yyyy">
+                <input  ng-model="User.birth" required type="text"/>
+            </datepicker>
+            <span><p ng-show="userForm.birthday.$invalid && !userForm.birthday.$pristine" class="help-block"><i>Birthday is
+                             is required</i></p></span>
+        </div>
+    </div>
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label>Gender</label></div>
+        <label style="margin-left: 2vh">
+            <input type="radio" name="gender" value="m" ng-model="User.gender" required>
+            male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="w" ng-model="User.gender" required>
+            female
+        </label>
+    </div>
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label for="contact">Last Contact</label></div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" id="contact" name="contact" ng-model="User.contact" required>
+            <span><p ng-show="userForm.contact.$invalid && !userForm.contact.$pristine" class="help-block"><i>Contact is
+                             is required</i></p></span>
+        </div>
+    </div>
+    <div class="row crudapp-row-distance">
+        <div class="col-md-3"><label for="cltm">CLTM</label></div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" id="cltm" name="cltm" ng-model="User.cltm" required>
+            <span><p ng-show="userForm.cltm.$invalid && !userForm.cltm.$pristine" class="help-block"><i>CLTM is
+                             is required</i></p></span>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10%;margin-left: 41%;">
+        <button type="submit" class="btn btn-primary" ng-show="!updateCondition" ng-disabled="userForm.$invalid" ng-click="saveClick()" ui-sref="/">Save</button>
+        <button type="button" class="btn btn-primary" ng-show="updateCondition" ng-click="updateClick()" ui-sref="/">Update</button>
+        <button type="button" class="btn btn-primary" ng-click="cancelClick()">Cancel</button>
+    </div>
+</form>
+
+<button type="button" class="btn btn-primary" ng-click="backBtn()" ui-sref="/">Back</button>

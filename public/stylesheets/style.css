@@ -1,0 +1,53 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+table tr th{
+  text-align: center;
+  padding: 10px;
+}
+table tr td{
+  text-align: center;
+  padding: 10px;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.crudapp-row-distance{
+  margin-top: 10px;
+  margin-left: 26% !important;
+}
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+#editBtn{
+  width: 45px;
+  height: 29px;
+  padding: 3px;
+}
+
+#deleteBtn{
+  width: 47px;
+  height: 29px;
+  padding: 3px;
+}
